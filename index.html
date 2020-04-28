@@ -122,104 +122,105 @@
                             be provided using the element.</p>
                     </div>
                 </div>
-
-                <span class="tags">2019</span>
-                <div class="content left">
-
-                    <div class="lab">
-                        <div class="pic">
-                            <img src="./test_pic.jpg">
-                        </div>
-                        <div class="desc">
-                            <span class="ellipsis" id="text">Title.description description description hello hello
-                                haha
-                                XDDD
-                                嚕嚕嚕屋wwwww
-                                conent in here right dd</span>
-                            <button class="more" id="more" onclick="showContent(this.id);">點擊查看更多</button>
-                            <hr>
-                        </div>
-                    </div>
-
-                    <div class="item right">
-                        <span class="circle"></span>
-                        <span class="arrow"></span>
-                        <div class="dialog">
-                            <p>v2 isible only when the widget is toggled into an "open" state. A summary or label
-                                can be prov</p>
-                        </div>
-
-
-                        <span class="circle"></span>
-                        <span class="arrow"></span>
-                        <div class="dialog">
-                            <p>visible only when the widget is toggled into an "open" state. A summary or
-                                label
-                                canisible only when the widget is toggled into an "open" state. A summary or label
-                                can
-                                be provided using the element.</p>
-
-                        </div>
-                    </div>
-                </div>
-
-                <span class="tags">2020</span>
-                <div class="content left">
-
-                    <div class="lab">
-                        <div class="pic">
-                            <img src="./test_pic.jpg">
-                        </div>
-                        <div class="desc">
-                            <span class="ellipsis" id="text">Title.description description description hello hello
-                                haha
-                                XDDD
-                                嚕嚕嚕屋wwwww
-                                conent in here right dd</span>
-                            <button class="more" id="more" onclick="showContent(this.id);">點擊查看更多</button>
-                        </div>
-                    </div>
-
-                    <div class="item right">
-                        <span class="circle"></span>
-                        <span class="arrow"></span>
-                        <div class="dialog">
-                            <p>v2 isible only when the widget is toggled into an "open" state. A summary or label
-                                can be prov</p>
-                        </div>
-
-                        <span class="circle"></span>
-                        <span class="arrow"></span>
-                        <div class="dialog">
-                            <p>visible only when the widget is toggled into an "open" state. A summary or label
-                                can
-                                be provided using the element.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="content left"></div>
             </div>
 
-            <script>
-                $(document).ready(function () {
-                    $(".ellipsis").each(function (i) {
-                        $(this).attr('id', "text" + (i + 1));
-                    });
-                    $(".more").each(function (i) {
-                        $(this).attr('id', i + 1);
-                    });
+            <span class="tags">2019</span>
+            <div class="content left">
+
+                <div class="lab">
+                    <div class="pic">
+                        <img src="./test_pic.jpg">
+                    </div>
+                    <div class="desc">
+                        <span class="ellipsis" id="text">Title.description description description hello hello
+                            haha
+                            XDDD
+                            嚕嚕嚕屋wwwww
+                            conent in here right dd</span>
+                        <button class="more" id="more" onclick="showContent(this.id);">點擊查看更多</button>
+                        <hr>
+                    </div>
+                </div>
+
+                <div class="item right">
+                    <span class="circle"></span>
+                    <span class="arrow"></span>
+                    <div class="dialog">
+                        <p>v2 isible only when the widget is toggled into an "open" state. A summary or label
+                            can be prov</p>
+                    </div>
+
+
+                    <span class="circle"></span>
+                    <span class="arrow"></span>
+                    <div class="dialog">
+                        <p>visible only when the widget is toggled into an "open" state. A summary or
+                            label
+                            canisible only when the widget is toggled into an "open" state. A summary or label
+                            can
+                            be provided using the element.</p>
+
+                    </div>
+                </div>
+            </div>
+
+            <span class="tags">2020</span>
+            <div class="content left">
+
+                <div class="lab">
+                    <div class="pic">
+                        <img src="./test_pic.jpg">
+                    </div>
+                    <div class="desc">
+                        <span class="ellipsis" id="text">Title.description description description hello hello
+                            haha
+                            XDDD
+                            嚕嚕嚕屋wwwww
+                            conent in here right dd</span>
+                        <button class="more" id="more" onclick="showContent(this.id);">點擊查看更多</button>
+                    </div>
+                </div>
+
+                <div class="item right">
+                    <span class="circle"></span>
+                    <span class="arrow"></span>
+                    <div class="dialog">
+                        <p>v2 isible only when the widget is toggled into an "open" state. A summary or label
+                            can be prov</p>
+                    </div>
+
+                    <span class="circle"></span>
+                    <span class="arrow"></span>
+                    <div class="dialog">
+                        <p>visible only when the widget is toggled into an "open" state. A summary or label
+                            can
+                            be provided using the element.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="content left"></div>
+        </div>
+
+        <script>
+            $(document).ready(function () {
+                $(".ellipsis").each(function (i) {
+                    $(this).attr('id', "text" + (i + 1));
                 });
+                $(".more").each(function (i) {
+                    $(this).attr('id', i + 1);
+                });
+            });
 
-                function showContent(id) {
-                    text = document.getElementById("text" + id)
+            function showContent(id) {
+                text = document.getElementById("text" + id)
 
-                    if (text.style.display === "-webkit-box") {
-                        text.style.display = "block";
-                    } else {
-                        text.style.display = "-webkit-box";
-                    }
+                if (text.style.display === "-webkit-box") {
+                    text.style.display = "block";
+                } else {
+                    text.style.display = "-webkit-box";
                 }
-            </script>
+            }
+        </script>
 </body>
 
 </html>
