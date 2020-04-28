@@ -54,7 +54,7 @@ body {
 .timeline .item {
   position: absolute;
   width: 100%;
-  height: 60%;
+  top: 20%;
 }
 
 .timeline .item .circle {
@@ -119,7 +119,15 @@ body {
 
 .lab .desc {
   padding: 10px 0 10px 0;
-  border-bottom: 3px solid #1b1d1f;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 3px solid #1b1d1f;
+  margin: 1em 0;
+  padding: 0;
 }
 
 .ellipsis {
@@ -140,5 +148,62 @@ body {
   border: 5px solid #1b1d1f;
   cursor: pointer;
   margin-top: 10px;
+}
+
+@media only screen and (max-width: 781px) {
+  * {
+    padding: 0;
+    margin: 0;
+  }
+  .timeline::after {
+    left: 50vw;
+  }
+  .timeline .tags {
+    left: calc( 50vw - 51px);
+  }
+  .right {
+    left: 0% !important;
+  }
+  .row {
+    width: 100vw;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .row .content {
+    width: 100vw;
+    padding: 90px 0 10px 0;
+  }
+  .row .item {
+    width: 100vw;
+    position: relative;
+    margin: 0;
+  }
+  .row .item .circle {
+    display: none !important;
+  }
+  .row .item .arrow {
+    display: none !important;
+  }
+  .row .item .dialog {
+    width: 68vw;
+    margin: 30px 0px 10px 0px;
+    background-color: #38434D;
+  }
+  .row .lab {
+    width: 100vw;
+    margin: 0px;
+    padding: 0px;
+    background-color: #38434D;
+  }
+  .row .desc {
+    padding: 0;
+    margin: 0;
+  }
+  hr {
+    display: none !important;
+  }
+  .ellipsis {
+    background-color: #38434D;
+  }
 }
 /*# sourceMappingURL=style.css.map */
