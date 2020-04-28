@@ -149,7 +149,7 @@ hr
         .tags
             left: calc( 50vw - 51px )
     .right
-        left: 0% !important
+        left: -8vw
         
 
     .row
@@ -159,12 +159,16 @@ hr
 
         .content
             width: 100vw
-            padding: 90px 0 10px 0
+            padding: auto 0
 
         .item
-            width: 100vw
+            width: 80vw
             position: relative
-            margin: 0
+            margin: 0 auto
+
+            .dialog
+                margin: 5 auto !important
+                background-color: $primary-color
 
             .circle
                 display: none !important
@@ -172,10 +176,6 @@ hr
             .arrow
                 display: none !important
 
-            .dialog
-                width: 68vw
-                margin: 30px 0px 10px 0px
-                background-color: $primary-color
 
         .lab
             width: 100vw
@@ -184,8 +184,10 @@ hr
             background-color: $primary-color
 
         .desc
-            padding: 0
+            padding: 0 15px 0 15px
             margin: 0
+
+
             
     hr
         display: none !important
