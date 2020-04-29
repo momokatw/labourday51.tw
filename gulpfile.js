@@ -7,6 +7,10 @@ gulp.task("clean", function () {
     return gulp.src("./docs")
         .pipe(clean());
 })
+gulp.task("CNAME", function() {
+    return gulp.src("./CNAME")
+        .pipe(gulp.dest("./docs/"));
+})
 
 gulp.task("HTML", function () {
     return gulp.src("./*.html")
@@ -24,6 +28,6 @@ gulp.task("IMGAGE", function () {
         .pipe(gulp.dest("./docs/img/"));
 })
 
-gulp.task("default", gulp.series("clean", "HTML", "CSS", "IMGAGE"), function (done) {
+gulp.task("default", gulp.series("clean", "CNAME", "HTML", "CSS", "IMGAGE"), function (done) {
     done();
 });
