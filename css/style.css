@@ -174,7 +174,7 @@ hr {
     left: calc( 50vw - 51px);
   }
   .right {
-    left: -8vw;
+    left: 0%;
   }
   .row {
     width: 100vw;
@@ -186,18 +186,22 @@ hr {
     padding: auto 0;
   }
   .row .item {
-    width: 80vw;
+    width: 100vw;
     position: relative;
-    margin: 0 auto;
   }
   .row .item .dialog {
-    margin: 5 auto !important;
+    width: 75vw;
+    margin-top: 2%;
+    margin-bottom: 4%;
+    margin-right: auto;
+    margin-left: auto;
     background-color: #38434D;
+    left: 0px;
   }
-  .row .item .circle {
+  .row .item .dialog::after {
     display: none !important;
   }
-  .row .item .arrow {
+  .row .circle {
     display: none !important;
   }
   .row .lab {
