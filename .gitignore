@@ -4,6 +4,7 @@ package-lock.json
 
 /test_pic.png
 /css
+/img
 
 gulpfile.dev.js
 gulpfile.prod.js
