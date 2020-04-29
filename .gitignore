@@ -1,1 +1,7 @@
-test_pic.jpg
+.vscode
+node_modules
+package-lock.json
+
+/test_pic.png
+/css
+*.css.map
