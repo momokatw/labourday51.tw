@@ -168,9 +168,12 @@ hr
 
 .detail
     &-banner
+        width: 75%
         vertical-align: middle
+        margin: auto
         img
             width: 100%
+            vertical-align: middle
     &-row
         display: flex
         flex-wrap: wrap
@@ -180,22 +183,21 @@ hr
             clear: both
             display: table
     &-pic
-        width: 70%
+        width: 80%
         vertical-align: middle
         display: block
-        margin: auto
+        margin: 5% auto
         font-size: 14px
-        margin-top: 5px
 
         img
             width: 100%
             vertical-align: middle
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
     &-desc
-        margin: auto
-        width: 70%
+        margin: 5% auto
+        width: 90%
+        font-size: 18px
         text-align: center
-
 .back
     position: fixed
     bottom: 0
@@ -218,10 +220,6 @@ hr
 .col
     width: 50%
     float: left
-    // &-6
-    //     float: left
-    //     padding: 15px
-    //     width: 25%
 
 // media css
 
@@ -234,7 +232,8 @@ hr
         &::after
             left: 50vw
         .tags
-            left: 25%
+            left: calc(  25% - 10px )
+            margin-top: 20px
     .right
         left: 0%
 
@@ -245,7 +244,7 @@ hr
 
         .content
             width: 100vw
-            padding: 100px 0 60px 0
+            padding: 100px 0 40px 0
 
         .item
             width: 100vw
@@ -282,5 +281,36 @@ hr
     hr
         display: none !important
 
-    .ellipsis
-        background-color: $primary-color
+    .detail
+        &-banner
+            width: 100%
+
+        &-row
+            margin-bottom: 75px
+
+        &-pic
+            width: 80%
+            vertical-align: middle
+            display: block
+            margin: 5% auto
+            font-size: 14px
+
+            img
+                width: 100%
+                vertical-align: middle
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+        &-desc
+            margin: 5% auto
+            width: 90%
+            font-size: 18px
+            text-align: center
+    .back
+        position: fixed
+        margin: 20px calc( 50% - 125px )
+
+        &:hover
+            filter: brightness(80%)
+
+    .col
+        width: 90%
+        margin: auto
