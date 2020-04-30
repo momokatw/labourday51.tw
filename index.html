@@ -1,32 +1,46 @@
 {% extends "base.html" %}
-{% block cards %}
-<span class="tags"> {{text.id}} </span>
-<div class="content left">
-    <div class="lab">
-        <div class="pic">
-            <span class="title"> {{text.title}} </span><br>
-            <img src="{{text.image}}">
-            <span class="source_pic"> {{text.source}} </span>
-        </div>
-        <div class="desc">
-            {{text.desc}}
-            <button class="more" id="more"> {{text.button}} </button>
-            <hr>
-        </div>
-    </div>
+{% block banner %}
+    <div class="banner">
+    <img src="./img/banner.png" alt="" width="100%">
+</div>
+{% endblock banner %}
 
-    <div class="item right">
-        <div class="dialog">
-            <span class="dialog-title"> {{text.title_1}} </span><br>
-            <span class="circle"></span>
-            <span> {{text.content_1}} </span>
+{% block cards %}
+
+<div class="timeline">
+    {% for text in words %}
+
+    <span class="tags"> {{text.id}} </span>
+    <div class="content left">
+        <div class="lab">
+            <div class="pic">
+                <span class="title"> {{text.title}} </span><br>
+                <img src="{{text.image}}">
+                <span class="source_pic"> {{text.source}} </span>
+            </div>
+            <div class="desc">
+                {% for desc in text.desc %}
+                <span>{{desc.section}}</span><br><br>
+                {% endfor %}
+                {% if text.images |length %}
+                <button class="more" onclick="window.location.href='/docs/'+ '{{text.id}}' +'.html'">查看更多</button>
+                {% endif %}
+                <hr>
+            </div>
         </div>
-        
-        <div class="dialog">
-            <span class="dialog-title"> {{text.title_2}} </span><br>
-            <span class="circle"></span>
-            <span> {{text.content_2}} </span>
+
+        <div class="item right">
+            {% for item in text.event %}
+            <div class="dialog">
+                <span class="dialog-title"> {{item.title}} </span><br>
+                <span class="circle"></span>
+                <span> {{item.content}} </span>
+            </div>
+
+            {% endfor %}
         </div>
     </div>
+    {% endfor %}
+
 </div>
 {% endblock cards %}

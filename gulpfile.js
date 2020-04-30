@@ -3,10 +3,13 @@ var clean = require("gulp-clean"),
     gulpImagemin = require("gulp-imagemin"),
     data = require("gulp-data"),
     fs = require("fs"),
-    path = require("path");
+    rename = require("gulp-rename");
 
 gulp.task("clean", function () {
-    return gulp.src("./docs")
+    return gulp.src([
+        "./docs/*.html",
+        "./docs/dist/**",
+    ])
         .pipe(clean());
 })
 gulp.task("CNAME", function () {
@@ -14,25 +17,35 @@ gulp.task("CNAME", function () {
         .pipe(gulp.dest("./docs/"));
 })
 
-gulp.task('compile', function () {
+
+gulp.task('compile', function (done) {
     "use strict";
     var twig = require("gulp-twig");
-    return gulp.src("./index.html")
-        .pipe(data(
-            function (file) {
-                data = JSON.parse(fs.readFileSync("./data/index.html.json"));
-                return { words: data.words }
-            }
-        ))
+    var data = JSON.parse(fs.readFileSync("./data/index.html.json"));
+
+    gulp.src('./index.html')
         .pipe(twig({
-            title: "Gulp and Twig",
-            benefits: [
-                'Fast',
-                'Flexible',
-                'Secure'
-            ]
+            data: {
+                words: data.words
+            }
         }))
-        .pipe(gulp.dest('./docs/'));
+        .pipe(gulp.dest("./docs/"))
+
+    for (var i = 0; i < data.words.length; i++) {
+        var event = data.words[i]
+
+        gulp.src("./detail.html")
+            .pipe(twig({
+                data: {
+                    images: event.images,
+                    banner: event.image
+                }
+            }))
+            .pipe(rename(event.id + ".html"))
+            .pipe(gulp.dest('./docs/'));
+    }
+    done();
+    return "done"
 })
 
 gulp.task("CSS", function () {
@@ -40,12 +53,6 @@ gulp.task("CSS", function () {
         .pipe(gulp.dest("./docs/dist/style/"));
 })
 
-gulp.task("IMGAGE", function () {
-    return gulp.src("./img/**")
-        .pipe(gulpImagemin())
-        .pipe(gulp.dest("./docs/img/"));
-})
-
-gulp.task("default", gulp.series("clean", "CNAME", "compile", "CSS", "IMGAGE"), function (done) {
+gulp.task("default", gulp.series("clean", "CNAME", "compile", "CSS"), function (done) {
     done();
 });

@@ -1,5 +1,6 @@
 $font-stack: arial, sans-serif
 $primary-color: #38434D
+$second-color: #f5af19
 
 *
     margin: 0
@@ -87,8 +88,8 @@ body
                 width: 100px
                 margin-top: -40px
                 left: calc( 50% - 50px )
-                background-color: #f5af19
-                border: 7px solid #f5af19
+                background-color: $second-color
+                border: 7px solid $second-color
                 border-radius: 15px
                 font-size: 0.8em
                 text-align: center
@@ -153,8 +154,9 @@ hr
     width: 250px
     color: white
     font-size: 1.1rem
-    background-color: #1b1d1f
-    border: 5px solid #1b1d1f
+    background-color: $second-color
+    border: 5px solid $second-color
+    color: #1b1d1f
     cursor: pointer
     margin-top: 10px
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
@@ -162,7 +164,7 @@ hr
     transition-duration: 0.2s
 
     &:hover
-        filter: brightness(250%)
+        filter: brightness(80%)
 
 .detail
     &-banner
@@ -188,6 +190,25 @@ hr
             width: 100%
             vertical-align: middle
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+
+.back
+    position: fixed
+    bottom: 0
+    margin: 20px
+    right: 0
+    width: 250px
+    color: white
+    font-size: 1.1rem
+    background-color: $second-color
+    border: 5px solid $second-color
+    color: #1b1d1f
+    cursor: pointer
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+    text-align: center
+    transition-duration: 0.2s
+
+    &:hover
+        filter: brightness(80%)
 
 .col
     flex-grow: 1
