@@ -21,7 +21,7 @@ body
     position: relative
     width: 50%
     border-radius: 6px
-    padding: 80px 0 0 0
+    padding: 100px 0 0 0
 
 .timeline
     position: relative
@@ -41,11 +41,12 @@ body
 
     .tags
         position: absolute
+        width: 50%
         background-color: #1b1d1f
         border: 7px solid #1b1d1f
         font-size: 2em
-        margin: 1% 0 0 0
-        left: calc(50% - 51px)
+        margin: 2% 0 0 0
+        left: 25%
         box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
         text-align: center
 
@@ -53,31 +54,45 @@ body
         position: absolute
         width: 100%
         top: 20%
-        // height: 30%
 
         .dialog
             width: 75%
             padding: 20px 30px
-            margin: 5% 0 25% 0
+            margin: 1% 0 30% 0
             border: #fff solid
             position: relative
-            border-radius: 6px
+            text-align: center
             left: 30px
+            box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+            transition-duration: 0.4s
+            &:hover
+                filter: brightness(115%)
 
             &::after
                 position: absolute
                 content: ""
                 top: calc( 50% - 15px )
-                left: -15px
+                left: -8px
                 transform: translateX(-50%)
                 width: 0
                 height: 0
-                border-width: 10px 15px
+                border-width: 10px 10px 10px 0
                 border-style: solid
                 border-color: transparent #fff transparent transparent
-            
+
             .dialog-title
-                margin-bottom: 10px
+                position: absolute
+                width: 100px
+                margin-top: -40px
+                left: calc( 50% - 50px )
+                background-color: #f5af19
+                border: 7px solid #f5af19
+                border-radius: 15px
+                font-size: 0.8em
+                text-align: center
+                color: #1b1d1f
+                letter-spacing: 1px
+                z-index: 1
 
             .circle
                 position: absolute
@@ -105,6 +120,7 @@ body
     .title
         text-align: center
         font-size: 22px
+        font-weight: bold
 
     .pic
         width: 80%
@@ -112,15 +128,15 @@ body
         display: block
         margin: auto
         font-size: 14px
+        margin-top: 5px
 
         img
             width: 100%
-            margin: 5px 0 0 0
             vertical-align: middle
             box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
 
     .desc
-        padding: 10px 0 10px 0
+        padding: 5px 0 10px 0
         font-size: 18px
 
 hr
@@ -141,6 +157,10 @@ hr
     margin-top: 10px
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
     text-align: center
+    transition-duration: 0.2s
+
+    &:hover
+        filter: brightness(250%)
 
 // media css
 
@@ -153,7 +173,7 @@ hr
         &::after
             left: 50vw
         .tags
-            left: calc( 50vw - 51px )
+            left: 25%
     .right
         left: 0%
 
@@ -164,7 +184,7 @@ hr
 
         .content
             width: 100vw
-            padding: auto 0
+            padding: 100px 0 60px 0
 
         .item
             width: 100vw
@@ -172,8 +192,7 @@ hr
 
             .dialog
                 width: 75vw
-                margin-top: 2%
-                margin-bottom: 4%
+                margin: 8% 0
                 margin-right: auto
                 margin-left: auto
                 background-color: $primary-color
@@ -182,6 +201,9 @@ hr
 
                 &::after
                     display: none !important
+
+                .dialog-title
+                    left: calc( 50% - 56px )
 
         .circle
             display: none !important
@@ -194,7 +216,7 @@ hr
 
         .desc
             padding: 0 15px 0 15px
-            margin: 2% 0
+            margin: 2% 0 5% 0
 
     hr
         display: none !important
