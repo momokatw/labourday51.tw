@@ -16,9 +16,11 @@
         <div class="detail-pic">
             <img src="{{ item.image }}">
         </div>
+        {% if item.desc |length %}
         <div class="detail-desc">
             <span> {{item.desc}} </span>
         </div>
+        {% endif %}
     </div>
     {% endfor %}
     <button class="back" onclick="history.back()">回上一頁</button>
