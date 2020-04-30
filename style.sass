@@ -65,6 +65,8 @@ body
             left: 30px
             box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
             transition-duration: 0.4s
+            z-index: 0
+
             &:hover
                 filter: brightness(115%)
 
@@ -92,18 +94,18 @@ body
                 text-align: center
                 color: #1b1d1f
                 letter-spacing: 1px
-                z-index: 1
 
-            .circle
-                position: absolute
-                width: 15px
-                height: 15px
-                background-color: #08adda
-                border: 4px solid white
-                border-radius: 50%
-                left: -45px
-                top: calc( 50% - 15px )
-                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+        .circle
+            position: absolute
+            width: 15px
+            height: 15px
+            background-color: #08adda
+            border: 4px solid white
+            border-radius: 50%
+            left: -45px
+            top: calc( 50% - 15px )
+            z-index: 1
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
 
 .left
     left: 0%
@@ -148,7 +150,7 @@ hr
     padding: 0
 
 .more
-    width: 150px
+    width: 250px
     color: white
     font-size: 1.1rem
     background-color: #1b1d1f
@@ -161,6 +163,40 @@ hr
 
     &:hover
         filter: brightness(250%)
+
+.detail
+    &-banner
+        vertical-align: middle
+        img
+            width: 100%
+    &-row
+        display: flex
+        flex-wrap: wrap
+
+        &::after
+            content: ""
+            clear: both
+            display: table
+    &-pic
+        vertical-align: middle
+        display: block
+        margin: auto
+        font-size: 14px
+        margin-top: 5px
+
+        img
+            width: 100%
+            vertical-align: middle
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)
+
+.col
+    flex-grow: 1
+    margin: 15px
+
+    &-6
+        float: left
+        padding: 15px
+        width: 25%
 
 // media css
 
